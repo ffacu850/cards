@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+$cyan: #4cd8c1;
+$ligth--cyan: #3eb9b7;
+$yellow: rgb(196, 214, 31);
+$light--gray: hsl(204,43%,93%);
+$lithg--blue: hsl(218,22%,67%);
+$bg--color: #f0f0f0;
+
+
+body{
+    background: $light--gray;
+    font-family: 'Karla', sans-serif;
+    color: $bg--color;
+    padding-top: 28px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    // En el caso de centrado en vertical y horizontal
+
+    // @media  screen and (min-width: 768px){
+    //     display: grid;
+    //     place-items: center;
+    //     height: 80vh;   
+    // } 
+}
+
+.main{
+    display: grid;
+
+    @media  screen and (min-width: 768px){
+        grid-template-columns: repeat(2,1fr);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+
+.box{
+    padding: 20px;
+}
+
+.box:nth-child(1){
+    border-radius: 10px 10px 0 0;
+}
+@media  screen and (min-width: 768px){
+    .box:nth-child(1){
+        grid-column: 1/3;
+    }
+    .box:nth-child(2){
+        border-radius: 0 0 0 10px;
+    }
+    
+}
+
+
+.box:nth-child(3){
+    border-radius: 0 0 10px 10px;
+    
+    @media  screen and (min-width: 768px){
+        border-radius: 0 0 10px 0;
+    }
+}
+.box--light-gray{
+    background: #fff;
+}
+
+.box--cyan{
+    background: $cyan;
+}
+
+.box--ligth--cyan{
+    background: $ligth--cyan;
+}
+
+.box__title{
+    margin: 0;
+    color: $cyan;
+}
+
+.box__currency{
+    font-size: 1.5rem;
+}
+
+.box__currency:before{
+    content: "$";
+}
+
+.box__periodicity{
+    margin-left: 10px;
+}
+
+.box__title--white{
+    color: #fff;
+}
+
+.box__subtitle{
+    color: $yellow;
+    font-weight: 700;
+}
+
+.box__text--dark{
+    color: #333;
+    font-weight: 400;
+}
+
+.box__button{
+    background: $yellow;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: $bg--color;
+    font-weight: 700;
+    padding: 16px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+}
+
+.list{
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
